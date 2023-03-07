@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Account</title>
+<style>
+	body {
+	  margin: 0;
+	}
+	.navbar {
+	  overflow: hidden;
+	  background-color:#2a2d2e;
+	  position: fixed ;
+	  top: 0;
+	  width: 100%;
+	}
+	.navbar a {
+	  float: left;
+	  display: block;
+	  color: #eeeeee;
+	  text-align: center;
+	  padding: 15px 18px;
+	  text-decoration: none;
+	  font-size: 18px;
+	}
+	.navbar a:hover {
+	  color: #1c87c9;
+	}  
+	.banner {
+    height:20%;
+    position:fixed;
+	align-items: center;
+	}
+	#services{
+    margin: 34px;
+    display: flex;
+	
+   }
+   #image{
+    width: 35px;
+    height: 26px;
+	opacity: 0.85;
+	border-radius:50%;
+}
+#services .box{ 
+    border: 2px solid rgb(8, 8, 8);
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background:cadetblue;
+    margin-bottom: 20px;
+}
+#ban {
+	background-color: #1c87c9;
+	width: 100%;
+	height: 50%;
+	position:absolute;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    height: 550px;
+	font-size: larger;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('https://tse3.mm.bing.net/th?id=OIP.r4uJngLv6KQIsDTpg1v7wgHaDj&pid=Api&P=0') no-repeat center center/cover ;
+   /* background-color:wheat; */
+  opacity: .5;
+	height: 100%;
+    top:0px;
+    
+    width: 100%;
+    z-index: -1;
+    opacity:0.65;
+}
+.btn{
+    background-color: brown;
+    text-decoration: none;
+    border: 1.5px solid white;
+    padding: 6px 20px;
+    margin: 17px;
+    font-size: 1rem;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+#services .box img{ 
+   height: 100px;
+   width: 160px;
+   border-radius: 10px;
+   margin: auto;
+   display: block;
+}
+#services .box a{ 
+   color: black;
+   
+}
+.feedback {
+	background-image:url("https://cdn.technologyadvice.com/wp-content/uploads/2018/02/friendly-chatbot.jpg");
+  background-color : #31B0D5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 60%;
+  border-color: #46b8da;
+}
+
+#mybutton {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
+	</style>           
+</head>
+<body>
+	
+	<div>
+	<nav class="navbar">
+		<a class="navbar-brand" href="#">
+			<img src="https://tse2.mm.bing.net/th?id=OIP.Kwm_wvf2qDPUVh5BIEUxUwHaGl&pid=Api&P=0" alt="logo" id="image"/>
+		</a>
+		<a class="nav-link" href="#">Home </a>
+		<a class="nav-link" href="./about.html" title="About">About</a>
+	
+		<span></span>
+		<span class="navbar-text" >
+			<a href="{{ url_for('logout') }} " style="position:right"> Logout</a>
+		  </span>
+	  </nav>
+	</div>
+<br><br>
+<div>
+	
+</div>
+  
+	  <section id="home">
+		<h1>Financial Inclusion System </h1>
+        <h3 class="h-primary"style="text-align:center"><i>Welcome {{session.name}}!</i> </h3>
+        <p></p>
+        <p>   
+            <a button class="btn" href="./predict" target="_self">Apply For Loan</a>
+        </p>
+		<div id="mybutton">
+			<section class="feedback">
+				<a href="#"><img src="https://cdn.technologyadvice.com/wp-content/uploads/2018/02/friendly-chatbot.jpg" alt=""style="height:60px;width:60px"></a>
+			<!-- <a href="#"><img src="chatbot.png" alt=""style="height:60px;width:60px;border-radius:50%"></a> -->
+    </section>
+			</div>
+    </section>
+	
+	  <section id="services-container">
+        <h1 class="h-primary center">Services Provided</h1>
+        <div id="services">
+            <div class="box">
+				<a href="./prediction.html" > <img src="https://tse3.mm.bing.net/th?id=OIP.VTIJfYQv0YNIMoe08ELBdwHaE8&pid=Api&P=0" alt=""></a>
+				<a href="./prediction.html" > <h2 class="h-secondary center">Home Loan</h2></a>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et qui, repudiandae similique nam, recusandae quidem ab asperiores ex, aut fugit labore veritatis facere?
+                    sint delectus ab dolorum nam. </p>
+            </div>
+            <div class="box">
+				<a href="./prediction.html" > <img src="https://tse1.mm.bing.net/th?id=OIP.lfsUC6CH86lvxz47M6GFmwHaEE&pid=Api&P=0" alt=""></a>
+				<a href="./prediction.html" > <h2 class="h-secondary center">Agricultural Loan</h2></a>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
+               <a href="./prediction.html" ><img src="img/zumba.jpg" alt=""></a> 
+               <a href="./prediction.html" > <h2 class="h-secondary center">Student Loan</h2></a>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident fugiat aliquam minima at explicabo. Earum eveniet quaerat, sunt molestias nesciunt quas! Quis.
+                    sint delectus ab dolorum nam. </p>
+            </div>
+        </div>
+		
+</body>
+</html>
